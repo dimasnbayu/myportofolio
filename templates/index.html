@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimas Bayu Nugroho - Portfolio</title>
+    <title>{{ name }} - Portofolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -12,10 +12,11 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <a href="#profile" class="brand">Dimas Bayu Nugroho</a>
+            <a href="{% url 'main:show_main' %}" class="brand">{{ name }}</a>
             <nav>
-                <a href="#profile" class="nav-button"><span>Profile</span></a>
-                <a href="#education" class="nav-button"><span>Education</span></a>
+                <a href="{% url 'main:show_main' %}" class="nav-button"><span>Profile</span></a>
+                <a href="{% url 'main:show_main' %}#education" class="nav-button"><span>Education</span></a>
+                <a href="{% url 'main:show_experience' %}" class="nav-button"><span>Experience</span></a>
             </nav>
         </div>
     </header>
@@ -25,25 +26,22 @@
             <div class="container hero-grid">
                 <div class="hero-identity">
                     <p class="hero-kicker">Computer Science &middot; Universitas Indonesia</p>
-                    <h1>Dimas Bayu Nugroho</h1>
+                    <h1>{{ name }}</h1>
                 </div>
                 <div class="hero-photo">
                     <div class="photo-block"></div>
-                    <img class="avatar" src="/static/img/dimas-jas1x12.jpg" alt="Photo of Dimas">
+                    <img class="avatar" src="/static/img/dimas-jas1x12.jpg" alt="Photo of {{ name }}">
                 </div>
                 <div class="hero-details">
-                    <p class="bio">A dedicated Computer Science student who has been actively engaged in Competitive Programming for several years,
-developing strong problem-solving, analytical, and coding skills. Highly motivated to gain new experiences and broaden
-expertise, particularly in IT-focused areas such as software engineering, artificial intelligence, and information systems.
-</p>
+                    <p class="bio">{{ bio }}</p>
                     <dl class="meta-list">
                         <div class="meta-row">
                             <dt>NPM</dt>
-                            <dd>2506534636</dd>
+                            <dd>{{ npm }}</dd>
                         </div>
                         <div class="meta-row">
                             <dt>Program</dt>
-                            <dd>S1 Ilmu Komputer</dd>
+                            <dd>{{ study_program }}</dd>
                         </div>
                         <div class="meta-row">
                             <dt>Birthdate</dt>
@@ -159,7 +157,7 @@ expertise, particularly in IT-focused areas such as software engineering, artifi
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Dimas Bayu Nugroho. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
+            <p>&copy; 2026 {{ name }}. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
         </div>
     </footer>
 </body>
