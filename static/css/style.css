@@ -20,14 +20,14 @@ html {
 }
 
 body {
-    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
     color: var(--ink);
     background-color: var(--paper);
     line-height: 1.6;
 }
 
-h1, .brand {
-    font-family: "Georgia", serif;
+h1, h2, h3, .brand {
+    font-family: 'Lora', Georgia, serif;
 }
 
 .container {
@@ -239,7 +239,7 @@ h1, .brand {
 ========================= */
 
 .education {
-    padding: 50px 10%;
+    padding: 4rem 0;
     background-color: var(--paper);
 }
 
@@ -457,10 +457,21 @@ h1, .brand {
 }
 
 .experience-card {
-    padding: 1.25rem;
-    background-color: #fff;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
+    display: grid;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border: 1px solid var(--card-color);
+    border-radius: 16px;
+
+    transition: 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .experience-category {

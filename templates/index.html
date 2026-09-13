@@ -6,6 +6,7 @@
     <title>{{ name }} - Portofolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
@@ -15,7 +16,7 @@
             <a href="{% url 'main:show_main' %}" class="brand">{{ name }}</a>
             <nav>
                 <a href="{% url 'main:show_main' %}" class="nav-button"><span>Profile</span></a>
-                <a href="{% url 'main:show_main' %}#education" class="nav-button"><span>Education</span></a>
+                <a href="{% url 'main:show_education' %}" class="nav-button"><span>Education</span></a>
                 <a href="{% url 'main:show_experience' %}" class="nav-button"><span>Experience</span></a>
             </nav>
         </div>
@@ -52,103 +53,6 @@
                         <a href="https://github.com/dimasnbayu/" class="social-link">GitHub</a>
                         <a href="https://www.linkedin.com/in/dimas-bayu-nugroho-6a0369340/" class="social-link">LinkedIn</a>
                         <a href="mailto:dimas.bayu51@ui.ac.id" class="social-link">Email</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="education" class="education">
-            <div class="container">
-                <div class="section-header">
-                    <p class="section-subtitle">MY JOURNEY</p>
-                    <h2>Education</h2>
-                    <p>
-                        My academic journey and the experiences that have shaped
-                        my knowledge and skills.
-                    </p>
-                </div>
-
-                <div class="education-list">
-                    <div class="education-card">
-                        <div class="education-left">
-                            <img
-                                src="static/img/ui-logo.png"
-                                alt="Universitas Indonesia Logo"
-                                class="education-logo"
-                            >
-                            <div class="education-year">
-                                2025 - Present
-                            </div>
-                        </div>
-                        <div class="education-content">
-                            <h3>Universitas Indonesia</h3>
-                            <h4>Bachelor of Computer Science</h4>
-
-                            <p>
-                                Currently pursuing a degree in Computer Science,
-                                focusing on programming, algorithms, and data structures.
-                            </p>
-
-                            <div class="education-tags">
-                                <span>Algorithms</span>
-                                <span>Data Structures</span>
-                                <span>Programming</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="education-card">
-                        <div class="education-left">
-                            <img
-                                src="static/img/m2-logo.png"
-                                alt="MAN 2 Kota Pekanbaru Logo"
-                                class="education-logo"
-                            >
-                            <div class="education-year">
-                                2022 - 2025
-                            </div>
-                         </div>
-
-                        <div class="education-content">
-                            <h3>MAN 2 Kota Pekanbaru</h3>
-                            <h4>Science Major</h4>
-
-                            <p>
-                                Actively participating in competitive programming contests to sharpen 
-                                 advanced problem-solving skills and algorithmic thinking.
-                            </p>
-
-                            <div class="education-tags">
-                                <span>Mathematics</span>
-                                <span>Problem Solving</span>
-                                <span>Competitive Programming</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-left">
-                            <img
-                                src="static/img/m1-logo.jpg"
-                                alt="MTsN 1 Kota Pekanbaru Logo"
-                                class="education-logo"
-                            >
-                            <div class="education-year">
-                                2019 - 2022
-                            </div>
-                        </div>
-                        <div class="education-content">
-                            <h3>MTsN 1 Kota Pekanbaru</h3>
-
-                            <p>
-                                Developed a strong foundation in mathematics,
-                                logical thinking, and problem solving.
-                            </p>
-
-                            <div class="education-tags">
-                                <span>Mathematics</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

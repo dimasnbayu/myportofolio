@@ -24,3 +24,20 @@ class Experience(models.Model):
     @property
     def is_ongoing(self):
         return self.ended_at is None
+
+
+class Education(models.Model):    
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255)
+    major = models.CharField(max_length=255)
+    description = models.TextField()
+    tags = models.JSONField(default=list)
+    photo = models.TextField(blank=True,null=True)
+    started_at = models.IntegerField(null=True)
+    ended_at = models.IntegerField(blank=True, null=True)
+    def __str__(self):
+        return self.name
+    
+    @property
+    def is_ongoing(self):
+        return self.ended_at is None
