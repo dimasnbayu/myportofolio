@@ -33,6 +33,9 @@ AI Disclosure:
 2. Meminta penjelasan penyebab error dan langkah perbaikannya.
 3. Menerapkan dan menyesuaikan solusi dari AI secara manual pada proyek.
 
+Log AI:
+1. https://chatgpt.com/share/6aa6a2d4-b1e8-83ec-b5b5-d11b9c6b8f6e
+
 Manual Fix:
 1. Error terjadi karena field photo bersifat non-nullable, sedangkan database sudah memiliki data lama.
 2. Menambahkan penanganan nilai default/kosong pada field photo.
