@@ -48,17 +48,9 @@
                                 Selesai
                             </p>
                         {% endif %}
+                        
+                        {% include "components/experience_delete_modal.html" with experience=experience %}
 
-                        <div class="experience-card-actions">
-                            <form method="post"
-                                  action="{% url 'main:delete_experience' experience.id %}">
-                                {% csrf_token %}
-                                <button type="submit"
-                                        class="button delete-button">
-                                    Hapus
-                                </button>
-                            </form>
-                        </div>
 
                     </article>
 

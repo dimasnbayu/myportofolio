@@ -55,3 +55,39 @@ Pertanyaan Reflektif:
 3. Apa perbedaan fungsi makemigrations dan migrate pada Django? Berikan contoh perubahan model yang mengharuskanmu menjalankan kedua perintah tersebut.
 
 = makemigrations digunakan untuk membuat file migration yang mencatat perubahan pada model, sedangkan migrate digunakan untuk menerapkan perubahan tersebut ke database. Contohnya, jika pada model Education ditambahkan field year = models.IntegerField(), kita menjalankan python manage.py makemigrations untuk membuat migration baru, kemudian python manage.py migrate untuk menerapkan penambahan field tersebut ke database.
+
+
+TUGAS 3:
+
+AI Disclosure:
+1. Meminta AI menganalisis dan membantu memperbaiki error NoReverseMatch pada proyek Django.
+2. Meminta penjelasan mengenai penyebab error dan cara kerja URL routing Django.
+3. Menerapkan dan menyesuaikan solusi dari AI secara manual pada proyek.
+
+Log AI:
+1. https://chatgpt.com/share/6ab15310-efc0-83ec-9256-d2f164cc0fa9
+
+Manual Fix:
+1. Menganalisis pesan error NoReverseMatch untuk mengetahui penyebab kegagalan pencarian URL.
+2. Memeriksa konfigurasi URL pada urls.py dan penggunaan url name dalam template atau view.
+3. Menyesuaikan nama URL atau parameter yang digunakan agar sesuai dengan konfigurasi Django.
+4. Memperbaiki kode secara manual berdasarkan hasil analisis AI.
+5. Menjalankan kembali aplikasi Django untuk memastikan error telah teratasi.
+6. Menguji navigasi dan fungsi terkait untuk memastikan URL dapat diakses dengan benar.
+
+
+Pertanyaan Reflektif:
+1. Jelaskan mengapa kita menggunakan ModelForm pada Django alih-alih membuat form HTML secara manual. Selain itu, jelaskan pula mengapa kita diwajibkan menambahkan {% csrf_token %} pada form tersebut!
+
+= ModelForm mempermudah pembuatan form berdasarkan model Django, termasuk validasi dan penyimpanan data ke database, sehingga lebih efisien daripada membuat form HTML manual. {% csrf_token %} melindungi form dari serangan Cross-Site Request Forgery (CSRF) dengan memastikan request berasal dari sumber yang sah.
+
+
+2. Pada Tutorial 03, kita membahas format data JSON dan XML. Mengapa JSON lebih disukai dalam pengembangan aplikasi web modern dibandingkan XML?
+
+= JSON lebih disukai karena sintaksnya sederhana, ringan, mudah dibaca, dan mudah diproses oleh JavaScript. JSON juga lebih efisien untuk pertukaran data antara frontend dan backend dibandingkan XML yang menggunakan tag lebih panjang.
+
+
+3. Jelaskan alur yang terjadi saat kamu menggunakan fungsi view untuk mengembalikan data portofoliomu dalam bentuk JSON. Mengapa kita perlu melakukan proses serialization pada model Django sebelum datanya dikembalikan?
+
+= View mengambil data portofolio dari database menggunakan Django, kemudian melakukan serialization untuk mengubah objek model menjadi format JSON. JSON dikembalikan melalui response agar dapat dibaca dan digunakan oleh client. Serialization diperlukan karena objek Django tidak dapat langsung dikonversi menjadi JSON.
+
