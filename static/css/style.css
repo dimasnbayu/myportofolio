@@ -732,14 +732,18 @@ h1, h2, h3, .brand {
     cursor: pointer;
 }
 
-.experience-delete-modal__actions {
+.experience-actions {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
 
-    justify-content: flex-end;
-
-    gap: 0.75rem;
-
-    margin-top: 1.5rem;
+.experience-actions .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
 .button-danger {
@@ -872,9 +876,6 @@ h1, h2, h3, .brand {
             0;
     }
 
-    .experience-delete-modal__actions {
-        flex-direction: column-reverse;
-    }
 
     .experience-delete-modal__actions .button {
         width: 100%;

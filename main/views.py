@@ -98,6 +98,32 @@ def create_education(request):
 
     return render(request, "education_form.html", context)
 
+def edit_experience(request, experience_id):
+    experience = get_object_or_404(
+        Experience,
+        id=experience_id
+    )
+
+    if request.method == "POST":
+        form = ExperienceForm(
+            request.POST,
+            instance=experience
+        )
+
+        if form.is_valid():
+            form.save()
+            return redirect("main:show_experience")
+
+    else:
+        form = ExperienceForm(
+            instance=experience
+        )
+
+    return render(request, "experience_edit.html", {
+        "form": form,
+        "experience": experience,
+    })
+
 def get_education_json(request):
     name_query = request.GET.get("name", "").strip()
     education = Education.objects.all()
