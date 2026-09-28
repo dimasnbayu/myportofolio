@@ -13,11 +13,13 @@
                         My academic journey and the experiences that have shaped
                         my knowledge and skills.
                     </p>
+                    {% if user.is_superuser %}
                     <a href="{% url 'main:create_education' %}"
                        class="button education-add-button">
                         <span aria-hidden="true">+</span>
                         Tambah Education
                     </a>
+                    {% endif %} 
                 </div>
 
                 <div class="education-list">
@@ -46,8 +48,9 @@
                                 </div>
 
                             </div>
-                            {% include "components/education_delete_modal.html" with education=education %}
-                            
+                            {% if user.is_superuser %} 
+                                {% include "components/education_delete_modal.html" with education=education %}
+                            {% endif %} 
                         </div>
 
                     {% empty %}
