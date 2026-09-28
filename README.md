@@ -91,3 +91,27 @@ Pertanyaan Reflektif:
 
 = View mengambil data portofolio dari database menggunakan Django, kemudian melakukan serialization untuk mengubah objek model menjadi format JSON. JSON dikembalikan melalui response agar dapat dibaca dan digunakan oleh client. Serialization diperlukan karena objek Django tidak dapat langsung dikonversi menjadi JSON.
 
+
+TUGAS 4:
+
+AI Disclosure:
+
+1. Meminta AI membantu menganalisis dan memperbaiki implementasi fitur autentikasi serta hak akses pengguna pada proyek Django.
+2. Meminta AI menjelaskan cara menerapkan permission berdasarkan role pengguna, termasuk membedakan akses pengguna biasa dan editor terhadap data portofolio.
+3. Meminta AI membantu mengimplementasikan fitur pemberian dan pembatalan star menggunakan relasi ManyToManyField, method POST, dan {% csrf_token %}.
+4. Meminta AI membantu menganalisis error pada view dan URL routing Django, termasuk error "toggle_star() got an unexpected keyword argument 'experience_id'".
+5. Menerapkan dan menyesuaikan solusi yang diberikan AI secara manual berdasarkan struktur proyek dan kebutuhan tugas.
+
+Log AI:
+
+1. https://chatgpt.com/share/6aba90f5-a220-83ec-81f3-74c7645ee8b7
+2. https://chatgpt.com/share/6aba9101-40dc-83ec-9bd7-302cd27f69d7
+
+Manual Fix:
+
+1. Menyesuaikan implementasi hak akses agar pengguna yang belum login hanya dapat membaca data, sedangkan pengguna yang sudah login dapat menggunakan fitur yang membutuhkan akun.
+2. Mengatur permission agar pengguna biasa dapat memberikan atau membatalkan star, tetapi tidak dapat membuat, mengubah, atau menghapus data portofolio.
+3. Menambahkan dan menyesuaikan relasi ManyToManyField pada model portofolio untuk menyimpan pengguna yang memberikan star.
+4. Menggunakan request method POST dan {% csrf_token %} pada fitur toggle star untuk menjaga keamanan request.
+5. Memperbaiki parameter pada URL dan view ketika terjadi error "toggle_star() got an unexpected keyword argument 'experience_id'" dengan menyesuaikan nama parameter agar konsisten antara urls.py dan fungsi view.
+6. Menguji kembali fitur login, permission, pemberian dan pembatal

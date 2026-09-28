@@ -10,7 +10,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.core import serializers
 from django.http import HttpResponse
 from main.forms import ExperienceForm,EducationForm
-from django.contrib.auth.decorators import login_required 
+from django.contrib.auth.decorators import login_required, permission_required
 from django.core.exceptions import PermissionDenied       
 
 def show_main(request):
@@ -63,6 +63,7 @@ def show_education(request):
     return render(request, "education.html", context)
 
 @login_required(login_url="/login/") 
+@permission_required("main.add_experience", raise_exception=True)
 def create_experience(request):
     if not request.user.is_superuser:
         raise PermissionDenied
@@ -81,6 +82,7 @@ def create_experience(request):
     return render(request, "experience_form.html", context)
 
 @login_required(login_url="/login/")
+@permission_required("main.add_experience", raise_exception=True)
 def create_education(request):
     if not request.user.is_superuser:
         raise PermissionDenied
@@ -98,6 +100,7 @@ def create_education(request):
 
     return render(request, "education_form.html", context)
 
+@permission_required("main.add_experience", raise_exception=True)
 def edit_experience(request, experience_id):
     experience = get_object_or_404(
         Experience,

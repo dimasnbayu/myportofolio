@@ -51,14 +51,15 @@
                         {% endif %}
                         {% include "components/experience_star.html" with experience=experience %}
                         {% if user.is_superuser %}
-                        {% include "components/experience_delete_modal.html" with experience=experience %}
-
-                            <div class="experience-actions">
-                                <a href="{% url 'main:edit_experience' experience.id %}"
+                            {% if perms.main.delete_experience %}
+                                {% include "components/experience_delete_modal.html" with experience=experience %}
+                            {% endif %}
+                            {% if perms.main.change_experience %}
+                                <div href="{% url 'main:edit_experience' experience.id %}"
                                 class="button">
                                     Edit
-                                </a>
-                            </div>
+                        </div>
+                            {% endif %}
                         {% endif %} 
 
                     </article>
