@@ -1,16 +1,13 @@
-<div class="experience-actions">
+<div class="education-actions">
     <button type="button"
             class="button button-danger"
-            popovertarget="delete-experience-{{ experience.id }}"
-            aria-label="Hapus {{ experience.title }}"
-            title="Hapus experience">
-        Hapus Experience
+            popovertarget="delete-education-{{ education.id }}"
+            aria-label="Hapus {{ education.title }}"
+            title="Hapus education">
+        Hapus Education
     </button>
 
-    <a href="{% url 'main:edit_experience' experience.id %}"
-       class="button">
-        Edit
-    </a>
+   
 </div>
 <div id="delete-education-{{ education.id }}"
      class="education-delete-modal"

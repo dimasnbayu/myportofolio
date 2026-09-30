@@ -30,13 +30,16 @@
             </nav>
         </div>
     </header>
+    
     {% block content %} {% endblock content %}
-
+    <!-- <button class="button button-secondary" onclick="showToast('Notifikasi Sistem', 'Project berhasil dimuat dengan baik!', 'success')">
+        Test Toast Notifikasi
+    </button> -->
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2026 {{ name }}. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
         </div>
     </footer>
-
+    {% include 'components/toast.html' %}
 </body>
 </html>
