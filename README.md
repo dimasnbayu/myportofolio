@@ -115,3 +115,35 @@ Manual Fix:
 4. Menggunakan request method POST dan {% csrf_token %} pada fitur toggle star untuk menjaga keamanan request.
 5. Memperbaiki parameter pada URL dan view ketika terjadi error "toggle_star() got an unexpected keyword argument 'experience_id'" dengan menyesuaikan nama parameter agar konsisten antara urls.py dan fungsi view.
 6. Menguji kembali fitur login, permission, pemberian dan pembatal
+
+
+TUGAS 5:
+
+AI Disclosure :
+1. Menggunakan ChatGPT untuk memahami konsep debouncing, fetch() dan await, serta risiko XSS pada implementasi AJAX.
+2. Meminta AI membantu menganalisis dan melakukan debugging pada fitur pencarian berbasis AJAX.
+3. Menggunakan prompting secara bertahap dengan memberikan kode, error, dan konteks project agar solusi yang diberikan sesuai dengan implementasi.
+4. Menggunakan hasil dari AI sebagai referensi, kemudian memeriksa kembali dan menyesuaikannya secara manual.
+
+Log AI : 
+
+1. https://chatgpt.com/share/6ac2fca7-435c-83ec-b5f6-7f7ee56a7c9d
+
+Manual Fix & Evaluasi AI :
+
+1. Menyesuaikan implementasi debouncing, fetch(), await, dan response.json() dengan struktur project dan endpoint yang digunakan.
+2. Menguji request dan response AJAX menggunakan Browser Developer Tools serta memperbaiki bagian yang tidak sesuai.
+3. Memastikan data yang berasal dari AJAX ditampilkan dengan cara yang lebih aman untuk mengurangi risiko XSS.
+4. Tidak menggunakan seluruh solusi AI secara langsung karena AI dapat memberikan solusi yang terlalu umum atau tidak sesuai dengan struktur project. Solusi akhir diperiksa, disesuaikan, dan diuji secara manual.
+5. Memastikan fitur pencarian tetap berjalan sesuai requirement setelah perubahan dilakukan.
+
+Pertanyaan Reflektif :
+
+1. Jelaskan apa itu debouncing dan mengapa teknik ini penting diterapkan pada fitur pencarian yang menggunakan AJAX!
+= Debouncing adalah teknik penundaan request sampai pengguna berhenti input pada waktu tertentu. Teknik ini penting supaya AJAX tidak request setiap pnegguna mengetik, sehingga jumlah request jadi lebih efisien. 
+
+2. Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
+= await saat penggunaan fetch() membuat eksekusi kode fungsi async menunggu hingga proses fetch selesai sebelum baris di bawahnya dijalankan. Jika tidak ada await, maka bisa saja proses berikutnya jalan sebelum data hasil fetch diterima.
+
+3. Jelaskan apa itu serangan XSS (Cross-Site Scripting) dan mengapa data yang ditampilkan melalui AJAX/JavaScript lebih rentan terhadap serangan ini daripada data yang ditampilkan langsung melalui template Django!
+= XSS adalah serangan dengan menyisipkan script berbahaya ke dalam halaman web. Data dari AJAX/JavaScript lebih berisiko jika langsung dimasukkan ke HTML, karena browser dapat menginterpretasikan data tersebut sebagai HTML atau script. Template Django secara default melakukan escaping terhadap karakter HTML sehingga lebih aman.
